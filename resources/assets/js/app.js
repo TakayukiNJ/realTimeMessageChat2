@@ -7,38 +7,32 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
-
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
-require('./bootstrap');
-
 Vue.component('chat-messages', require('./components/ChatMessages.vue'));
 Vue.component('chat-form', require('./components/ChatForm.vue'));
 
 const app = new Vue({
     el: '#app',
-
+    
     data: {
         messages: []
     },
 
     created() {
         this.fetchMessages();
-        
+
         Echo.private('chat')
-          .listen('MessageSent', (e) => {
-            this.messages.push({
-              message: e.message.message,
-              user: e.user
+            .listen('MessageSent', (e) => {
+                this.messages.push({
+                    message: e.message.message,
+                    user: e.user
+                });
             });
-          });
     },
 
     methods: {
@@ -47,13 +41,10 @@ const app = new Vue({
                 this.messages = response.data;
             });
         },
-
         addMessage(message) {
             this.messages.push(message);
 
-            axios.post('/messages', message).then(response => {
-              console.log(response.data);
-            });
+            axios.post('/messages', message).then(response => {});
         }
     }
 });

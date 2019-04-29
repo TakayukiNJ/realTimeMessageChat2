@@ -29,7 +29,7 @@ class MessageSent implements ShouldBroadcast
      * @var Message
      */
     public $message;
-    
+
     /**
      * Create a new event instance.
      *
@@ -41,7 +41,7 @@ class MessageSent implements ShouldBroadcast
         $this->message = $message;
     }
 
-     /**
+    /**
      * Get the channels the event should broadcast on.
      *
      * @return Channel|array

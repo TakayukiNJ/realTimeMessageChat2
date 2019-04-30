@@ -13,14 +13,30 @@
                     <chat-messages :messages="messages"></chat-messages>
                 </div>
                 <div class="panel-footer">
-                    Form
                     <chat-form
                         v-on:messagesent="addMessage"
                         :user="{{ Auth::user() }}"
                     ></chat-form>
+                    
+                    <div class="input-group">
+                        <input id="btn-input" type="text" name="message" class="form-control input-sm" placeholder="Type your message here..." v-model="newMessage" @keyup.enter="sendMessage">
+                        
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary btn-sm" id="btn-chat" @click="sendMessage">
+                                Send
+                            </button>
+                        </span>
+                    </div>
                 </div>
+                
+                
             </div>
         </div>
     </div>
 </div>
+<script>
+  export default {
+    props: ['messages']
+  };
+</script>
 @endsection

@@ -9,9 +9,11 @@
                 <div class="panel-heading">Chats</div>
 
                 <div class="panel-body">
+                    messages
                     <chat-messages :messages="messages"></chat-messages>
                 </div>
                 <div class="panel-footer">
+                    Form
                     <chat-form
                         v-on:messagesent="addMessage"
                         :user="{{ Auth::user() }}"

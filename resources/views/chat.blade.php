@@ -34,9 +34,4 @@
         </div>
     </div>
 </div>
-<script>
-  export default {
-    props: ['messages']
-  };
-</script>
 @endsection

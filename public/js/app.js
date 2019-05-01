@@ -42624,8 +42624,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['messages']
@@ -42657,9 +42655,7 @@ var render = function() {
           _vm._v(" "),
           _c("p", [
             _vm._v(
-              "\n                test\n                " +
-                _vm._s(message.message) +
-                "\n            "
+              "\n                " + _vm._s(message.message) + "\n            "
             )
           ])
         ])
